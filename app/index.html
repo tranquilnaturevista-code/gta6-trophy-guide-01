@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="The best offline guide and tracker for the 55 PlayStation 5 trophies of Grand Theft Auto VI: checklist, roadmap to the platinum, missable flags, and a cited guide to every trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Legend</h1>
+    <p class="tagline">The trophy guide and tracker for GTA VI — every trophy, a roadmap to the
+    platinum, and a cited guide to each one. Works offline; your progress stays in
+    your browser.</p>
+    <div class="progress-wrap" role="status" aria-label="Trophy progress">
+      <div class="progress-line"><strong id="progressText">0 of 55 earned</strong><span id="progressDetail"></span></div>
+      <div class="progress-bar"><div id="progressFill"></div></div>
+      <p class="progress-grades" id="gradeCounts"></p>
+    </div>
+  </div>
+</header>
+
+<nav class="controls" aria-label="Filters and progress tools">
+  <label class="search">Search
+    <input id="search" type="search" placeholder="Name, description or guide…" autocomplete="off">
+  </label>
+  <label>Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="platinum">Platinum &amp; 100%</option>
+      <option value="missable">Missable</option>
+    </select>
+  </label>
+  <label>Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Status
+    <select id="status">
+      <option value="all">Earned &amp; remaining</option>
+      <option value="earned">Earned</option>
+      <option value="remaining">Remaining</option>
+    </select>
+  </label>
+  <label class="toggle"><input id="spoilers" type="checkbox"> Hide story spoilers</label>
+  <span class="mini-progress" id="miniProgress" role="status"></span>
+  <button id="export" type="button">Export progress</button>
+  <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+  <button id="reset" type="button">Reset</button>
+</nav>
+
+<main>
+  <section id="roadmap" aria-labelledby="roadmapTitle">
+    <h2 id="roadmapTitle">Roadmap to the platinum</h2>
+    <p class="section-intro">One playthrough is enough, and there are no online trophies — but
+    there is <strong>no mission replay</strong>, so keep a manual save at the start of
+    every chapter and one before the final mission. The story takes around 60 hours;
+    the platinum takes around 200 hours at difficulty 4/10. Only one trophy is
+    flagged as possibly missable: <strong>Positive Mental Attitude</strong>, a Chapter 1
+    meditation spot that disappears after that chapter.</p>
+    <div id="stages" class="stages"></div>
+  </section>
+
+  <section aria-labelledby="listTitle">
+    <h2 id="listTitle">All 55 trophies</h2>
+    <p class="section-intro" id="listIntro">Official names, descriptions and grades as
+    published on PlayStation (Exophase and PSNProfiles, 18 Nov 2026). Each guide is
+    written for this page, in our own words, with its sources named beside it.</p>
+    <p id="emptyNotice" class="empty" hidden>No trophies match these filters.</p>
+    <div id="list" class="trophy-list"></div>
+  </section>
+
+  <section aria-labelledby="notesTitle">
+    <h2 id="notesTitle">Before you start</h2>
+    <ul class="notes">
+      <li><strong>No mission replay, no New Game+.</strong> Free roam carries on after the
+      story, so almost everything can be finished afterwards — but anything tied to a
+      story moment that passes cannot be replayed. Save at every chapter start.</li>
+      <li><strong>Cheats disable trophies — and saving.</strong> Turning on a cheat switches
+      trophies off, and you cannot save again once you have used one. Cheats only unlock
+      after the story, so keep them off your trophy save entirely.</li>
+      <li><strong>100% completion (“A Long Road”) is the hardest trophy.</strong> Its checklist
+      (Progress &gt; Stats &gt; 100% Completion) shows up after the story; everything you did
+      before already counts, and nothing on it is missable.</li>
+      <li><strong>28 of the 55 trophies are hidden</strong> on PlayStation until you earn them.
+      The spoiler setting above hides their names, descriptions and guides until earned.</li>
+    </ul>
+    <h3>Sources for this guide</h3>
+    <p>The trophy list itself — names, descriptions and grades — is the official list as
+    published on PlayStation, taken from Exophase and cross-checked with PSNProfiles on
+    18 November 2026. The guides draw on the published guides below and cite them beside
+    each trophy; their words are never copied, only their facts, in our own words.</p>
+    <ul class="sources" id="sourceList"></ul>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Legend is an unofficial fan-made guide. Grand Theft Auto and GTA are
+  trademarks of Take-Two Interactive; this guide is not affiliated with or endorsed by
+  Rockstar Games, and it contains no Rockstar logo, artwork or game screenshots.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

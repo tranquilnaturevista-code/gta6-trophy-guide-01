@@ -1,0 +1,93 @@
+[
+ {
+  "h": 800,
+  "name": "1-cover.jpg",
+  "preset": {
+   "earned": [
+    2,
+    3,
+    4,
+    8,
+    15,
+    16,
+    20,
+    21,
+    28,
+    35,
+    42,
+    52
+   ],
+   "spoilers": false
+  },
+  "query": "",
+  "scroll": "#listTitle",
+  "view": "checklist with guides and sources open, progress bar and filters",
+  "w": 1280
+ },
+ {
+  "h": 800,
+  "name": "2-roadmap.jpg",
+  "preset": {
+   "earned": [
+    2,
+    3,
+    4,
+    8,
+    15,
+    16,
+    20,
+    21,
+    28,
+    35,
+    42,
+    52
+   ],
+   "spoilers": false
+  },
+  "query": "",
+  "scroll": "#roadmap",
+  "view": "roadmap to the platinum, six stages with progress",
+  "w": 1280
+ },
+ {
+  "h": 800,
+  "name": "3-guide.jpg",
+  "preset": {
+   "earned": [
+    2,
+    3,
+    4,
+    8,
+    15,
+    16,
+    20,
+    21,
+    28,
+    35,
+    42,
+    52
+   ],
+   "spoilers": false
+  },
+  "query": "#trophy-28",
+  "view": "the missable trophy's guide open with its sources",
+  "w": 1280
+ },
+ {
+  "h": 800,
+  "name": "4-spoiler.jpg",
+  "preset": {
+   "earned": [
+    2,
+    3,
+    8,
+    15,
+    16
+   ],
+   "spoilers": true
+  },
+  "query": "#trophy-4",
+  "view": "spoiler mode on: an unearned hidden trophy masked beside earned ones",
+  "w": 1280
+ }
+]

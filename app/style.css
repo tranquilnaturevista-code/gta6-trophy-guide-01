@@ -1,0 +1,236 @@
+/* Leonida Legend — an original look of its own: deep Leonida night, a neon
+   horizon drawn in pure CSS, warm amber for earned things, teal for the rest.
+   No images, no web fonts, nothing fetched: the page works with the network off. */
+:root {
+  --ink: #eef3f6;
+  --ink-dim: #aab8c2;
+  --ink-faint: #7e8f9a;
+  --bg: #0d1b24;
+  --bg-soft: #12242f;
+  --card: #162e3c;
+  --card-line: #274556;
+  --amber: #ffb454;
+  --amber-deep: #e07f2e;
+  --teal: #39c2b0;
+  --pink: #ff7a9e;
+  --platinum: #bfe3f2;
+  --gold: #ffd166;
+  --silver: #cfd8dc;
+  --bronze: #d89a6a;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+a { color: var(--teal); }
+a:visited { color: #6fd3c5; }
+
+/* Masthead: a CSS-only neon horizon — a setting sun disc and its glow. */
+.masthead {
+  background:
+    radial-gradient(420px 190px at 78% -40px, rgba(255, 122, 158, 0.55), rgba(255, 122, 158, 0) 70%),
+    radial-gradient(560px 260px at 82% -70px, rgba(255, 180, 84, 0.5), rgba(255, 180, 84, 0) 70%),
+    linear-gradient(180deg, #1b3a4d 0%, #0d1b24 78%);
+  border-bottom: 3px solid var(--amber);
+  padding: 34px 20px 26px;
+}
+.masthead-inner { max-width: 1060px; margin: 0 auto; }
+.kicker {
+  margin: 0 0 6px;
+  color: var(--amber);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0 0 8px;
+  font-size: 2.6rem;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+.tagline { margin: 0 0 18px; max-width: 720px; color: var(--ink-dim); }
+.progress-line { display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline; }
+.progress-line strong { font-size: 1.15rem; color: #fff; }
+.progress-line span { color: var(--ink-dim); font-size: 0.92rem; }
+.progress-bar {
+  height: 12px;
+  margin-top: 8px;
+  background: #0a141b;
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-bar > div {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--amber-deep), var(--amber));
+  transition: width 0.3s ease;
+}
+.progress-grades { margin: 8px 0 0; color: var(--ink-dim); font-size: 0.9rem; }
+
+/* Controls */
+.controls {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: end;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  background: rgba(13, 27, 36, 0.96);
+  border-bottom: 1px solid var(--card-line);
+}
+.controls label { font-size: 0.82rem; color: var(--ink-dim); display: grid; gap: 3px; }
+.controls label.toggle { display: flex; align-items: center; gap: 6px; padding-bottom: 7px; color: var(--ink); }
+.controls input[type="search"], .controls select {
+  padding: 7px 9px;
+  border: 1px solid var(--card-line);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  color: var(--ink);
+  font: inherit;
+}
+.controls input[type="search"] { width: 230px; }
+.controls button, .controls .import {
+  padding: 8px 13px;
+  border: 1px solid var(--card-line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.controls button:hover, .controls .import:hover { border-color: var(--teal); }
+.controls .import { display: inline-block; }
+.controls .import input { display: none; }
+.mini-progress {
+  align-self: center;
+  margin-left: auto;
+  color: var(--amber);
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+#export { background: var(--amber); border-color: var(--amber); color: #241503; font-weight: 700; }
+
+main { max-width: 1060px; margin: 0 auto; padding: 8px 20px 30px; }
+section { margin-top: 28px; }
+h2 { margin: 0 0 8px; font-size: 1.5rem; }
+h3 { margin: 22px 0 6px; font-size: 1.1rem; }
+.section-intro { color: var(--ink-dim); max-width: 780px; }
+.section-intro strong { color: var(--ink); }
+.empty { color: var(--ink-dim); font-style: italic; }
+
+/* Roadmap stages */
+.stages { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.stage {
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.stage h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.stage h3 .stage-num {
+  display: inline-block;
+  width: 26px; height: 26px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #241503;
+  font-size: 0.85rem;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: 2px;
+}
+.stage p { margin: 0 0 10px; color: var(--ink-dim); font-size: 0.93rem; }
+.stage .stage-progress { color: var(--teal); font-size: 0.85rem; font-weight: 700; }
+.stage ul { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.stage li {
+  padding: 3px 9px;
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+}
+.stage li.done { background: rgba(255, 180, 84, 0.16); border-color: var(--amber); color: var(--amber); text-decoration: line-through; }
+.stage li.missable { border-color: var(--pink); color: var(--pink); }
+
+/* Trophy cards */
+.trophy-list { display: grid; gap: 12px; }
+.trophy {
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.trophy.earned { border-color: var(--amber); }
+.trophy-top { display: flex; gap: 12px; align-items: flex-start; }
+.trophy-check { flex: none; margin-top: 3px; }
+.trophy-check input { width: 22px; height: 22px; accent-color: var(--amber); cursor: pointer; }
+.trophy-head { flex: 1; min-width: 0; }
+.trophy-head h3 { margin: 0; font-size: 1.08rem; line-height: 1.3; }
+.trophy.earned .trophy-head h3 { color: var(--amber); }
+.trophy-head .official {
+  margin: 3px 0 0;
+  color: var(--ink-dim);
+  font-size: 0.94rem;
+  font-style: italic;
+}
+.badges { flex: none; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; max-width: 260px; }
+.badge {
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge.platinum { background: var(--platinum); color: #12303f; }
+.badge.gold { background: var(--gold); color: #3d2c00; }
+.badge.silver { background: var(--silver); color: #263238; }
+.badge.bronze { background: var(--bronze); color: #2e1a08; }
+.badge.hidden { background: #263238; color: var(--ink-dim); border: 1px solid var(--card-line); }
+.badge.missable { background: var(--pink); color: #3d0a1a; }
+.badge.kind { background: transparent; color: var(--teal); border: 1px solid var(--teal); }
+.trophy .guide { margin: 10px 0 0; padding-top: 10px; border-top: 1px dashed var(--card-line); }
+.trophy .guide h4 { margin: 0 0 4px; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+.trophy .guide p { margin: 0 0 8px; font-size: 0.95rem; }
+.trophy .guide p:last-child { margin-bottom: 0; }
+.trophy .sources { margin: 10px 0 0; font-size: 0.85rem; color: var(--ink-faint); }
+.trophy .sources a { margin-right: 10px; }
+.trophy .count { color: var(--ink-dim); font-size: 0.86rem; }
+.spoiler-mask { color: var(--ink-faint); font-style: italic; }
+
+/* Notes and footer */
+.notes, .sources { padding-left: 20px; }
+.notes li { margin-bottom: 8px; }
+.notes li::marker { color: var(--amber); }
+.sources li { margin-bottom: 4px; }
+footer {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 20px 34px;
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  h1 { font-size: 2rem; }
+  .stages { grid-template-columns: 1fr; }
+  .trophy-top { flex-wrap: wrap; }
+  .badges { max-width: none; justify-content: flex-start; }
+  .controls input[type="search"] { width: 100%; }
+}
